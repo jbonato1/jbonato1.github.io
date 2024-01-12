@@ -96,8 +96,30 @@
             margin-right: 5px; /* Space between GitHub icon and text */
         }
         .publication, .publication-details {
-    font-size: 14px; /* This will affect all text within the publication container */
-}
+            font-size: 14px; /* This will affect all text within the publication container */
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0 5px;
+        }
+        table td:nth-child(1) {
+            width:120px;
+        }
+        table td:nth-child(2) {
+            padding-left: 20px;
+            padding-right: 20px;
+            width:250px;
+        }
+        
+        table td:nth-child(3) {
+            padding-right: 20px;
+            width:250px;
+        }
+        table td:nth-child(4) {
+            padding-right: 20px;
+            width:200px;
+        }
+
     </style>
 </head>
 <body>
@@ -170,11 +192,57 @@
             </div>
         </div>
         
-        <h2>Education</h2>
-        <ul>
-            <li>AAA</li>
+        <h2>Education </h2>
+  
+        <table class="path">
+          <tbody>
+            <tr>
+              <td><b>2011-2016</b></td>
+              <td>B.Sc + M.Sc. in Physics</td>
+              <td>University of Trento</td>
+              <td><i>Venice, Italy</i></td>
+            </tr>
+            <tr>
+              <td><b>2018-2023</b></td>
+              <td>Ph.D. in Data Science and Computation (Dr. S. Panzeri)</td>
+              <td>University of Bologna and Istituto Italiano di Tecnologia</td>
+              <td><i>Bologna/Rovereto, Italy</i></td>
+            </tr>
+            <tr>
+              <td><b>&#8618;  12 months</b></td>
+              <td>Visiting Researcher,Department of Neurology </td>
+              <td>University Medical Center Hamburg-Eppendorf (UKE)</td>
+              <td><i>Hamburg, Germany</i></td>
+            </tr>
+            </tbody>
+        </table>
+            <h2>Work Experience </h2>
+  
+            <table class="path">
+              <tbody>
 
-        </ul>
+            <tr>
+              <td><b>2023-present</b></td>
+              <td>AI Research Sceintist</td>
+              <td>Leonardo Labs</td>
+              <td><i>Rome, Italy</i></td>
+            </tr>
+            <tr>
+                <td><b>2022-2023</b></td>
+                <td>Computer Vision Scientist</td>
+                <td>Istituto Italiano di Tecnologia</td>
+                <td><i>Genova, Italy</i></td>
+            </tr>
+            <tr>
+                <td><b>2017-2018</b></td>
+                <td>Consultant in Robotics and AI</td>
+                <td>KPMG Advisory</td>
+                <td><i>Milan, Italy</i></td>
+            </tr>
+
+  
+          </tbody>
+        </table>
 
         <h2>Projects</h2>
         <p>
@@ -182,9 +250,9 @@
             <!-- Add information about your projects -->
         </p>
 
-        <h2>Publications</h2>
+        <h2>Main publications</h2>
         <div class="publication">
-            <h3>Title of the Paper</h3>
+            <!-- <h3>Title of the Paper</h3>
             <p class="publication-details">Authors: First Author, Second Author, et al.<br>Journal: Journal Name | Year: 2023</p>
             <div class="publication-links">
                 <a href="https://github.com/your-github-repo" target="_blank" title="Code">
@@ -226,18 +294,211 @@
                     year={2023},
                     publisher={Publisher}
                 }
-            </pre>
+            </pre> -->
 
-        </div>
-        <!-- Repeat the above div for each publication, with appropriate details and links -->
         
+        <!-- Repeat the above div for each publication, with appropriate details and links -->
+        <!-- MIND: Multi-Task Incremental Network Distillation -->
+        <h3>MIND: Multi-Task Incremental Network Distillation</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, F. Pelosin, L. Sabetta, A. Nicolosi<br>
+            Conference: AAAI-24, the 38th Annual AAAI Conference on Artificial Intelligence | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-mind" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-mind" target="_blank">PDF</a>
+            <a href="#cite-mind" title="Cite">Cite</a>
+        </div>
+        <pre id="cite-mind" class="bibtex-entry" style="display: none;">
+            @inproceedings{Bonato2023MIND,
+                title={MIND: Multi-Task Incremental Network Distillation},
+                author={J. Bonato and F. Pelosin and L. Sabetta and A. Nicolosi},
+                booktitle={AAAI-24, the 38th Annual AAAI Conference on Artificial Intelligence},
+                year={2023}
+            }
+        </pre>
+
+        <!-- DUCK: Distance-based Unlearning via Centroid Kinematics -->
+        <h3>DUCK: Distance-based Unlearning via Centroid Kinematics</h3>
+        <p class="publication-details">
+            Authors: Marco Cotogni, Jacopo Bonato, Luigi Sabetta, Francesco Pelosin, Alessandro Nicolosi<br>
+            Journal: Under revision | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-duck" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-duck" target="_blank">PDF</a>
+            <a href="#cite-duck" title="Cite">Cite</a>
+        </div>
+        <pre id="cite-duck" class="bibtex-entry" style="display: none;">
+            @unpublished{Cotogni2023DUCK,
+                title={DUCK: Distance-based Unlearning via Centroid Kinematics},
+                author={Marco Cotogni and Jacopo Bonato and Luigi Sabetta and Francesco Pelosin and Alessandro Nicolosi},
+                note={Under revision},
+                year={2023}
+            }
+        </pre>
+        <!-- Fast semantic segmentation of large-scale astrocytic networks using deep learning -->
+        <h3>Fast semantic segmentation of large-scale astrocytic networks using deep learning</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, S. Curreli, S. Romanzi, S. Panzeri, T. Fellin<br>
+            Journal: Under revision | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-8" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-8" target="_blank">PDF</a>
+            <a href="#cite8" title="Cite">Cite</a>
+        </div>
+        <pre id="cite8" class="bibtex-entry" style="display: none;">
+            @unpublished{Bonato2023AstrocyticNetworks,
+                title={Fast semantic segmentation of large-scale astrocytic networks using deep learning},
+                author={J. Bonato and S. Curreli and S. Romanzi and S. Panzeri and T. Fellin},
+                note={Under revision},
+                year={2023}
+            }
+        </pre>
+
+        <!-- FetalPose: markerless pose estimation for 4D ultrasound imaging of fetal behavior -->
+        <h3>FetalPose: markerless pose estimation for 4D ultrasound imaging of fetal behavior</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, N. Pretti, S. Panzeri, C. Becchio<br>
+            Journal: Under revision | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-9" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-9" target="_blank">PDF</a>
+            <a href="#cite9" title="Cite">Cite</a>
+        </div>
+        <pre id="cite9" class="bibtex-entry" style="display: none;">
+            @unpublished{Bonato2023FetalPose,
+                title={FetalPose: markerless pose estimation for 4D ultrasound imaging of fetal behavior},
+                author={J. Bonato and N. Pretti and S. Panzeri and C. Becchio},
+                note={Under revision},
+                year={2023}
+            }
+        </pre>
+        <!-- Constraints on the design of neuromorphic circuits set by the properties of neural population codes -->
+        <h3>Constraints on the design of neuromorphic circuits set by the properties of neural population codes</h3>
+        <p class="publication-details">
+            Authors: S. Panzeri, E. Janotte, A. Pequeño-Zurro, J. Bonato, C. Bartolozzi<br>
+            Journal: Neuromorphic Computing and Engineering | Date: 3 January 2023
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-7" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-7" target="_blank">PDF</a>
+            <a href="#cite7" title="Cite">Cite</a>
+        </div>
+        <pre id="cite7" class="bibtex-entry" style="display: none;">
+            @article{Panzeri2023Neuromorphic,
+                title={Constraints on the design of neuromorphic circuits set by the properties of neural population codes},
+                author={S. Panzeri and E. Janotte and A. Pequeño-Zurro and J. Bonato and C. Bartolozzi},
+                journal={Neuromorphic Computing and Engineering},
+                year={2023},
+                month={Jan},
+                day={3}
+            }
+        </pre>
+        <!-- Complementary encoding of spatial information in hippocampal astrocytes -->
+        <h3>Complementary encoding of spatial information in hippocampal astrocytes</h3>
+        <p class="publication-details">
+            Authors: S. Curreli, J. Bonato, S. Romanzi, S. Panzeri, T. Fellin<br>
+            Journal: PLoS Biology | Year: 2022 - <span style="background-color: yellow;">Best paper of the year in PLoS Bio.</span>
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-2" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-2" target="_blank">PDF</a>
+            <a href="#cite2" title="Cite">Cite</a>
+        </div>
+        <pre id="cite2" class="bibtex-entry" style="display: none;">
+            @article{Curreli2022HippocampalAstrocytes,
+                title={Complementary encoding of spatial information in hippocampal astrocytes},
+                author={S. Curreli and J. Bonato and S. Romanzi and S. Panzeri and T. Fellin},
+                journal={PLoS Biology},
+                volume={20},
+                number={3},
+                pages={e3001530},
+                year={2022},
+                publisher={Public Library of Science}
+            }
+        </pre>
+        <!-- Optimizing measures of information encoding in astrocytic calcium signals -->
+        <h3>Optimizing measures of information encoding in astrocytic calcium signals</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, S. Curreli, T. Fellin, S. Panzeri<br>
+            Journal: Brain Informatics. Lecture Notes in Computer Science | Year: 2022
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-4" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-4" target="_blank">PDF</a>
+            <a href="#cite4" title="Cite">Cite</a>
+        </div>
+        <pre id="cite4" class="bibtex-entry" style="display: none;">
+            @inproceedings{Bonato2022AstrocyticCalcium,
+                title={Optimizing measures of information encoding in astrocytic calcium signals},
+                author={J. Bonato and S. Curreli and T. Fellin and S. Panzeri},
+                booktitle={Brain Informatics. Lecture Notes in Computer Science},
+                volume={13406},
+                pages={117-128},
+                year={2022},
+                publisher={Springer}
+            }
+        </pre>
+
+        <!-- Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics -->
+        <h3>Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, P. Onorato, S. Oss, L.M. Gratton<br>
+            Journal: PHYSICS EDUCATION | Year: 2017
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-1" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-1" target="_blank">PDF</a>
+            <a href="#cite1" title="Cite">Cite</a>
+        </div>
+        <pre id="cite1" class="bibtex-entry" style="display: none;">
+            @article{Bonato2017WavePhysics,
+                title={Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics},
+                author={J. Bonato and P. Onorato and S. Oss and L.M. Gratton},
+                journal={PHYSICS EDUCATION},
+                volume={52},
+                number={4},
+                pages={045017-045021},
+                year={2017},
+                publisher={IOP Publishing}
+            }
+        </pre>
+    </div>
+
+
+
         <h2>Talks</h2>
         <ul>
-            <li>AAA</li>
+        <li><b>CodeMotion, Lventure</b>, [ Rome, 12/10/2023] Object detection in Computer Vision: The most advanced techniques that have revolutionized artificial vision</li>
+        
+        <li><b>Brain Informatics</b>, [ Padova, 15/07/2022 | 17/07/2022 ] Oral presentation: Optimizing measures of information encoding in astrocytic calcium signals</li>
 
+        <li><b>SFN meeting</b> [ 12/11/2021 | 16/11/2021 ] Rapid spatiotemporal analysis of astrocytic calcium dynamics using deep learning</li>
+
+        <li><b>Neuromatch meeting</b> <span style="background-color: yellow;">Selected for Oral Presentation</span> [ 30/03/2020 | 31/03/2020 ] Astro3S: a novel deep learning method for Astrocyte Spatiotemporal Semantic Segmentation</li>
+
+        <li><b>SIF meeting</b> [ Trento, 11/09/2017 | 15/09/2017 ] Oral presentation: Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics</li>
         </ul>
         
-
     </section>
     <script>
         // Simple JavaScript to toggle the display of the BibTeX entry
