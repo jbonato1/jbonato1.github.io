@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - GitHub.io</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+        body::before {
+        content: "";
+        position: fixed; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.1); /* Adjust the opacity to your liking */
+        z-index: -1; /* Ensures the overlay doesn't cover the content */
+        }
+         body {
+             font-family: Arial, sans-serif;
+             margin: 20px;
+             background-image: url('/home/jb/Documents/jbonato1.github.io/sfondo.jpg');
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+             position: relative; /* Needed for the ::before pseudo-element to work correctly */
+        }
+
+        header {
+            background: rgba(0, 0, 0, .7); /* Gray background */
+            padding: 10px 0; /* Some padding */
+            text-align: center; /* Center the header content */
+            margin-bottom: 200px;
+        }
+
+
+        /* Styles for icons and links */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px; /* Space out the icons */
+            color: white; /* Icon color */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .social-icons a:hover {
+            color: #0077b5; /* LinkedIn color on hover */
+        }
+        
+        .social-icons a.github:hover {
+            color: #0077b5; /* GitHub color on hover */
+        }
+        .social-icons img {
+        height: 1.2em; /* Scales the image to match the size of the text */
+        width: auto; /* Maintains the aspect ratio of the image */
+        margin-right: 5px; /* Space between the image and the text */
+        }
+        .profile-circle {
+        width: 250px; /* Adjust the size as needed */
+        height: 250px; /* Adjust the size as needed */
+        border-radius: 50%; /* This creates the circle shape */
+        overflow: hidden; /* This ensures the image does not escape the circular boundary */
+        margin: 0 auto; /* This centers the circle in the container */
+        position: relative; /* This positions the circle below the header */
+        top: -300px; /* Adjust this value to move the circle below the header */
+        margin-left: 400px;
+        }
+
+        .profile-circle img {
+        width: 100%; /* This ensures the image covers the full circle */
+        height: auto; /* This keeps the image aspect ratio */
+        display: block; /* This removes any extra space below the image */
+        }
+
+        section {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .7); /* Adjust the color and opacity as needed */
+            z-index: -1;
+            color:black;
+        }
+
+        /* Make sure the content of the section has a higher z-index than the pseudo-element */
+        section > * {
+            position: relative;
+            z-index: 2;
+            color: white;
+            background: rgbs(1,1,1,1);
+        }   
+        section::before{
+            background: rgbs(1,1,1,1);   
+        }
+
+        
+        h1,h2, h3 {
+            color: white;
+        }
+        p1 {
+            line-height: 1.6;
+            color: white;
+        }
+        p   {line-height: 1.6;
+            color: white;}
+        /* Style for three-column layout */
+        .column {
+            float: left;
+            width: 45%; /* Adjust the width for three columns */
+            padding: 5px; /* Optional padding for better spacing */
+            color: white;
+            background: rgba(0, 0, 0, 0);
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            color: white;
+        }
+                /* Style for the publications section */
+        .publication {
+            margin-bottom: 10px; /* Space between publications */
+            padding-left: 20px;
+        }
+
+        .publication h3 {
+            margin: 0; /* No margin for publication title */
+            
+        }
+
+        .publication-details {
+            font-style: italic; /* Italic style for publication details */
+            margin-bottom: 1px; /* Space below details */
+            margin-top: 1px;
+        }
+
+        .publication-links {
+            margin-bottom: 20px;
+            color:aquamarine;
+        }
+        .publication-links a {
+            margin-right: 10px; /* Space between links */
+            text-decoration: none; /* No underline */
+            color: aquamarine;
+        }
+
+        .publication-links a:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: red;
+        }
+        .publication-links .fa-github {
+            margin-right: 5px; /* Space between GitHub icon and text */
+            color: aquamarine;
+        }
+        .publication, .publication-details {
+            font-size: 14px; /* This will affect all text within the publication container */
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0 5px;
+            color: white;
+        }
+        table td:nth-child(1) {
+            width:120px;
+        }
+        table td:nth-child(2) {
+            padding-left: 20px;
+            padding-right: 20px;
+            width:250px;
+        }
+        
+        table td:nth-child(3) {
+            padding-right: 20px;
+            width:250px;
+        }
+        table td:nth-child(4) {
+            padding-right: 20px;
+            width:200px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jacopo Bonato</h1>
+        <p1>Research Scientist in Artificial Intelligence</p1>
+        <!-- Social icons for LinkedIn and GitHub -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/jacopo-bonato92" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i> jacopo-bonato92
+            </a>
+            <a href="https://github.com/jbonato1" target="_blank" class="github" title="GitHub">
+                <i class="fab fa-github"></i> jbonato1
+            </a>
+            <a href="mailto:bonato.jimi@gmail.com">
+                <i class="fas fa-envelope"></i> email
+            </a>
+            </a>
+            <!-- Google Scholar symbol (using your custom image) -->
+            <a href="https://scholar.google.com/citations?user=yourID" target="_blank">
+                <img src="imgs/google-scholar.png" alt="Google Scholar" />
+            </a>
+        </div>
+    </header>
+
+    <div class="profile-circle">
+        <img src="imgs/prof.jpeg" alt="Profile photo">
+      </div>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Hello world! I'm Jacopo Bonato an experimental physicist (Master's degree from the University 
+            of Trento) and an Artificial Intelligence researcher (Ph.D. in Data Science and Computation at
+            the University of Bologna and IIT). My research and work experiences were focused on computational 
+            neuroscience, information theory machine learning, and deep learning. Besides my academic and scientific 
+            interests, I love music. I had my academy diploma in classical guitar at the Conservatory
+            of Music of Trento. Finally, I love sports and I practice a lot of activities: running, swimming,
+             tennis and kitesurfing.
+
+            Feel free to reach out if you have any questions.
+            <!-- Add a brief description about yourself here -->
+        </p>
+
+        <div class="row">   
+            <div class="column">
+                <!-- New column for Research Interests -->
+                <section>
+                    <h2>Research Interests</h2>
+                    <ul>
+                        <li>Computer Vision</li>
+                        <li>Continual Learning</li>
+                        <li>Machine Unlearning</li> 
+                        <li>Information Theory</li>
+                        <li>Computational Neuroscience</li>
+                        <!-- Add more interests here -->
+                    </ul>
+                </section>
+            </div>         
+            <div class="column">
+                <!-- New column for Programming Skills -->
+                <section>
+                    <h2>Programming Skills</h2>
+                    <ul>
+                        <li>Python <td>▰▰▰▰▰▱</td></li>
+                        <li>Pytorch, sklearn, Opencv <td>▰▰▰▰▰▱</td></li>
+                        <li>HPC: OpenMP, MPI, Cuda <td>▰▰▰▰▱▱</td></li>
+                        <li>Verilog <td>▰▰▰▱▱▱</td></li>
+                        <li>C,C++ <td>▰▰▰▱▱▱</td></li>
+                        <!-- Add more skills here -->
+                    </ul>
+                </section>
+            </div>
+        </div>
+        
+        <h2>Education </h2>
+  
+        <table class="path">
+          <tbody>
+            <tr>
+              <td><b>2011-2016</b></td>
+              <td>B.Sc + M.Sc. in Physics</td>
+              <td>University of Trento</td>
+              <td><i>Trento, Italy</i></td>
+            </tr>
+            <tr>
+              <td><b>2018-2023</b></td>
+              <td>Ph.D. in Data Science and Computation (Dr. S. Panzeri)</td>
+              <td>University of Bologna and Istituto Italiano di Tecnologia</td>
+              <td><i>Bologna/Rovereto, Italy</i></td>
+            </tr>
+            <tr>
+              <td><b>&#8618;  12 months</b></td>
+              <td>Visiting Researcher,Department of Neurology </td>
+              <td>University Medical Center Hamburg-Eppendorf (UKE)</td>
+              <td><i>Hamburg, Germany</i></td>
+            </tr>
+            </tbody>
+        </table>
+            <h2>Work Experience </h2>
+  
+            <table class="path">
+              <tbody>
+
+            <tr>
+              <td><b>2023-present</b></td>
+              <td>AI Research Sceintist</td>
+              <td>Leonardo Labs</td>
+              <td><i>Rome, Italy</i></td>
+            </tr>
+            <tr>
+                <td><b>2022-2023</b></td>
+                <td>Computer Vision Scientist</td>
+                <td>Istituto Italiano di Tecnologia</td>
+                <td><i>Genova, Italy</i></td>
+            </tr>
+            <tr>
+                <td><b>2017-2018</b></td>
+                <td>Consultant in Robotics and AI</td>
+                <td>KPMG Advisory</td>
+                <td><i>Milan, Italy</i></td>
+            </tr>
+
+  
+          </tbody>
+        </table>
+
+        <h2>Projects</h2>
+        <p>
+            Here are some of the projects I've worked on:
+            <!-- Add information about your projects -->
+        </p>
+
+        <h2>Main publications</h2>
+        <div class="publication">
+            <!-- <h3>Title of the Paper</h3>
+            <p class="publication-details">Authors: First Author, Second Author, et al.<br>Journal: Journal Name | Year: 2023</p>
+            <div class="publication-links">
+                <a href="https://github.com/your-github-repo" target="_blank" title="Code">
+                    <i class="fab fa-github"></i>code 
+                </a>
+                <a href="link-to-pdf" target="_blank">PDF</a>
+                <a href="#cite1" title="Cite">Cite</a>
+            </div>
+            <pre id="cite1" class="bibtex-entry" style="display: none;">
+                @article{YourCitationKey2023,
+                    title={Title of the Paper},
+                    author={First Author and Second Author and others},
+                    journal={Journal Name},
+                    volume={xx},
+                    number={yy},
+                    pages={zz-aa},
+                    year={2023},
+                    publisher={Publisher}
+                }
+            </pre>
+
+            <h3>Title of the Paper</h3>
+            <p class="publication-details">Authors: First Author, Second Author, et al.<br>Journal: Journal Name | Year: 2023</p>
+            <div class="publication-links">
+                <a href="https://github.com/your-github-repo" target="_blank" title="Code">
+                    <i class="fab fa-github"></i>code 
+                </a>
+                <a href="link-to-pdf" target="_blank">PDF</a>
+                <a href="#cite2" title="Cite">Cite</a>
+            </div>
+            <pre id="cite2" class="bibtex-entry" style="display: none;">
+                @article{YourCitationKey2023,
+                    title={Test},
+                    author={First Author and Second Author and others},
+                    journal={Journal Name},
+                    volume={xx},
+                    number={yy},
+                    pages={zz-aa},
+                    year={2023},
+                    publisher={Publisher}
+                }
+            </pre> -->
+
+        
+        <!-- Repeat the above div for each publication, with appropriate details and links -->
+        <!-- MIND: Multi-Task Incremental Network Distillation -->
+        <h3>MIND: Multi-Task Incremental Network Distillation</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, F. Pelosin, L. Sabetta, A. Nicolosi<br>
+            Conference: AAAI-24, the 38th Annual AAAI Conference on Artificial Intelligence | Year: 2023 <span style="background-color: green;">Selected for Oral Presentation</span> 
+        </p>
+        <div class="publication-links">
+            <a href="https://github.com/Lsabetta/MIND" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="https://arxiv.org/abs/2312.02916" target="_blank">PDF</a>
+            <a href="#cite-mind" title="Cite">Cite</a>
+        </div>
+        <pre id="cite-mind" class="bibtex-entry" style="display: none;">
+            @inproceedings{Bonato2023MIND,
+                title={MIND: Multi-Task Incremental Network Distillation},
+                author={J. Bonato and F. Pelosin and L. Sabetta and A. Nicolosi},
+                booktitle={AAAI-24, the 38th Annual AAAI Conference on Artificial Intelligence},
+                year={2023}
+            }
+        </pre>
+
+        <!-- DUCK: Distance-based Unlearning via Centroid Kinematics -->
+        <h3>DUCK: Distance-based Unlearning via Centroid Kinematics</h3>
+        <p class="publication-details">
+            Authors: Marco Cotogni, Jacopo Bonato, Luigi Sabetta, Francesco Pelosin, Alessandro Nicolosi<br>
+            Journal: Under revision | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="https://github.com/OcraM17/DUCK" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="https://arxiv.org/abs/2312.02052" target="_blank">PDF</a>
+            <a href="#cite-duck" title="Cite">Cite</a>
+        </div>
+        <pre id="cite-duck" class="bibtex-entry" style="display: none;">
+            @unpublished{Cotogni2023DUCK,
+                title={DUCK: Distance-based Unlearning via Centroid Kinematics},
+                author={Marco Cotogni and Jacopo Bonato and Luigi Sabetta and Francesco Pelosin and Alessandro Nicolosi},
+                note={arxiv,Under revision},
+                year={2023}
+            }
+        </pre>
+        <!-- Fast semantic segmentation of large-scale astrocytic networks using deep learning -->
+        <h3>Fast semantic segmentation of large-scale astrocytic networks using deep learning</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, S. Curreli, S. Romanzi, S. Panzeri, T. Fellin<br>
+            Journal: Under revision | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="https://github.com/jbonato1/ASTRA" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="https://www.biorxiv.org/content/10.1101/2023.05.03.539211v1" target="_blank">PDF</a>
+            <a href="#cite8" title="Cite">Cite</a>
+        </div>
+        <pre id="cite8" class="bibtex-entry" style="display: none;">
+            @unpublished{Bonato2023AstrocyticNetworks,
+                title={Fast semantic segmentation of large-scale astrocytic networks using deep learning},
+                author={J. Bonato and S. Curreli and S. Romanzi and S. Panzeri and T. Fellin},
+                note={Biorxiv, Under revision},
+                year={2023}
+            }
+        </pre>
+
+        <!-- FetalPose: markerless pose estimation for 4D ultrasound imaging of fetal behavior -->
+        <h3>FetalPose: markerless pose estimation for 4D ultrasound imaging of fetal behavior</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, N. Pretti, S. Panzeri, C. Becchio<br>
+            Journal: Under revision | Year: 2023
+        </p>
+        <div class="publication-links">
+            <a href="link-to-github-repo-9" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-9" target="_blank">PDF</a>
+            <a href="#cite9" title="Cite">Cite</a>
+        </div>
+        <pre id="cite9" class="bibtex-entry" style="display: none;">
+            @unpublished{Bonato2023FetalPose,
+                title={FetalPose: markerless pose estimation for 4D ultrasound imaging of fetal behavior},
+                author={J. Bonato and N. Pretti and S. Panzeri and C. Becchio},
+                note={Under revision},
+                year={2023}
+            }
+        </pre>
+        <!-- Constraints on the design of neuromorphic circuits set by the properties of neural population codes -->
+        <h3>Constraints on the design of neuromorphic circuits set by the properties of neural population codes</h3>
+        <p class="publication-details">
+            Authors: S. Panzeri, E. Janotte, A. Pequeño-Zurro, J. Bonato, C. Bartolozzi<br>
+            Journal: Neuromorphic Computing and Engineering | Date: 3 January 2023
+        </p>
+        
+        <div class="publication-links">
+            <a href="https://iopscience.iop.org/article/10.1088/2634-4386/acaf9c"target="_blank">PDF</a>
+            <a href="#cite7" title="Cite">Cite</a>
+        </div>
+        <pre id="cite7" class="bibtex-entry" style="display: none;">
+            @article{Panzeri2023Neuromorphic,
+                title={Constraints on the design of neuromorphic circuits set by the properties of neural population codes},
+                author={S. Panzeri and E. Janotte and A. Pequeño-Zurro and J. Bonato and C. Bartolozzi},
+                journal={Neuromorphic Computing and Engineering},
+                year={2023},
+                month={Jan},
+                day={3}
+            }
+        </pre>
+        <!-- Complementary encoding of spatial information in hippocampal astrocytes -->
+        <h3>Complementary encoding of spatial information in hippocampal astrocytes</h3>
+        <p class="publication-details">
+            Authors: S. Curreli, J. Bonato, S. Romanzi, S. Panzeri, T. Fellin<br>
+            Journal: PLoS Biology | Year: 2022 - <span style="background-color: green;">Best paper of the year in PLoS Bio.</span>
+        </p>
+        <div class="publication-links">
+            <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001530" target="_blank">PDF</a>
+            <a href="#cite2" title="Cite">Cite</a>
+        </div>
+        <pre id="cite2" class="bibtex-entry" style="display: none;">
+            @article{Curreli2022HippocampalAstrocytes,
+                title={Complementary encoding of spatial information in hippocampal astrocytes},
+                author={S. Curreli and J. Bonato and S. Romanzi and S. Panzeri and T. Fellin},
+                journal={PLoS Biology},
+                volume={20},
+                number={3},
+                pages={e3001530},
+                year={2022},
+                publisher={Public Library of Science}
+            }
+        </pre>
+        <!-- Optimizing measures of information encoding in astrocytic calcium signals -->
+        <h3>Optimizing measures of information encoding in astrocytic calcium signals</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, S. Curreli, T. Fellin, S. Panzeri<br>
+            Journal: Brain Informatics. Lecture Notes in Computer Science | Year: 2022
+        </p>
+        <div class="publication-links">
+            <a href="https://github.com/jbonato1/AstroSimulation" target="_blank" title="Code">
+                <i class="fab fa-github"></i>code 
+            </a>
+            <a href="link-to-pdf-4" target="_blank">PDF</a>
+            <a href="#cite4" title="Cite">Cite</a>
+        </div>
+        <pre id="cite4" class="bibtex-entry" style="display: none;">
+            @inproceedings{Bonato2022AstrocyticCalcium,
+                title={Optimizing measures of information encoding in astrocytic calcium signals},
+                author={J. Bonato and S. Curreli and T. Fellin and S. Panzeri},
+                booktitle={Brain Informatics. Lecture Notes in Computer Science},
+                volume={13406},
+                pages={117-128},
+                year={2022},
+                publisher={Springer}
+            }
+        </pre>
+
+        <!-- Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics -->
+        <h3>Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics</h3>
+        <p class="publication-details">
+            Authors: J. Bonato, P. Onorato, S. Oss, L.M. Gratton<br>
+            Journal: PHYSICS EDUCATION | Year: 2017
+        </p>
+        <div class="publication-links">
+            <a href="https://iopscience.iop.org/article/10.1088/1361-6552/aa6f8c" target="_blank">PDF</a>
+            <a href="#cite1" title="Cite">Cite</a>
+        </div>
+        <pre id="cite1" class="bibtex-entry" style="display: none;">
+            @article{Bonato2017WavePhysics,
+                title={Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics},
+                author={J. Bonato and P. Onorato and S. Oss and L.M. Gratton},
+                journal={PHYSICS EDUCATION},
+                volume={52},
+                number={4},
+                pages={045017-045021},
+                year={2017},
+                publisher={IOP Publishing}
+            }
+        </pre>
+    </div>
+
+
+
+        <h2>Talks</h2>
+        <ul>
+        <li><b>AAAI</b>, [ Vancouver, 23/02/2024] MIND: Multi-Task Incremental Network Distillation, Oral presentation</li>
+        <li><b>CodeMotion, Lventure</b>, [ Rome, 12/10/2023] Object detection in Computer Vision: The most advanced techniques that have revolutionized artificial vision</li>
+        
+        <li><b>Brain Informatics</b>, [ Padova, 15/07/2022 | 17/07/2022 ] Oral presentation: Optimizing measures of information encoding in astrocytic calcium signals</li>
+
+        <li><b>SFN meeting</b> [ 12/11/2021 | 16/11/2021 ] Rapid spatiotemporal analysis of astrocytic calcium dynamics using deep learning</li>
+
+        <li><b>Neuromatch meeting</b> <span style="background-color: green;">Selected for Oral Presentation</span> [ 30/03/2020 | 31/03/2020 ] Astro3S: a novel deep learning method for Astrocyte Spatiotemporal Semantic Segmentation</li>
+
+        <li><b>SIF meeting</b> [ Trento, 11/09/2017 | 15/09/2017 ] Oral presentation: Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics</li>
+        </ul>
+        
+    </section>
+    <script>
+        // Simple JavaScript to toggle the display of the BibTeX entry
+        document.querySelectorAll('.publication-links a[href^="#cite"]').forEach(function(citeLink) {
+            citeLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                var bibtexEntry = document.querySelector(this.getAttribute('href'));
+                bibtexEntry.style.display = bibtexEntry.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
