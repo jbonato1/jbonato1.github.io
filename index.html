@@ -7,15 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        body::before {
+        content: "";
+        position: fixed; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.1); /* Adjust the opacity to your liking */
+        z-index: -1; /* Ensures the overlay doesn't cover the content */
         }
+         body {
+             font-family: Arial, sans-serif;
+             margin: 20px;
+             background-image: url('/home/jb/Documents/jbonato1.github.io/sfondo.jpg');
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+             position: relative; /* Needed for the ::before pseudo-element to work correctly */
+        }
+
         header {
-            background-color: #f0f0f0; /* Gray background */
+            background: rgba(0, 0, 0, .7); /* Gray background */
             padding: 10px 0; /* Some padding */
             text-align: center; /* Center the header content */
+            margin-bottom: 200px;
         }
+
 
         /* Styles for icons and links */
         .social-icons {
@@ -24,7 +42,7 @@
 
         .social-icons a {
             margin: 0 10px; /* Space out the icons */
-            color: #333; /* Icon color */
+            color: white; /* Icon color */
             text-decoration: none; /* Remove underline from links */
         }
 
@@ -33,29 +51,77 @@
         }
         
         .social-icons a.github:hover {
-            color: #333; /* GitHub color on hover */
+            color: #0077b5; /* GitHub color on hover */
         }
         .social-icons img {
-        height: 1em; /* Scales the image to match the size of the text */
+        height: 1.2em; /* Scales the image to match the size of the text */
         width: auto; /* Maintains the aspect ratio of the image */
         margin-right: 5px; /* Space between the image and the text */
         }
+        .profile-circle {
+        width: 250px; /* Adjust the size as needed */
+        height: 250px; /* Adjust the size as needed */
+        border-radius: 50%; /* This creates the circle shape */
+        overflow: hidden; /* This ensures the image does not escape the circular boundary */
+        margin: 0 auto; /* This centers the circle in the container */
+        position: relative; /* This positions the circle below the header */
+        top: -300px; /* Adjust this value to move the circle below the header */
+        margin-left: 400px;
+        }
+
+        .profile-circle img {
+        width: 100%; /* This ensures the image covers the full circle */
+        height: auto; /* This keeps the image aspect ratio */
+        display: block; /* This removes any extra space below the image */
+        }
+
         section {
+            position: relative;
             max-width: 800px;
             margin: 0 auto;
+            z-index: 1;
         }
-        h1, h2, h3 {
-            color: #333;
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .7); /* Adjust the color and opacity as needed */
+            z-index: -1;
+            color:black;
         }
-        p {
+
+        /* Make sure the content of the section has a higher z-index than the pseudo-element */
+        section > * {
+            position: relative;
+            z-index: 2;
+            color: white;
+            background: rgbs(1,1,1,1);
+        }   
+        section::before{
+            background: rgbs(1,1,1,1);   
+        }
+
+        
+        h1,h2, h3 {
+            color: white;
+        }
+        p1 {
             line-height: 1.6;
-            color: #666;
+            color: white;
         }
+        p   {line-height: 1.6;
+            color: white;}
         /* Style for three-column layout */
         .column {
             float: left;
             width: 45%; /* Adjust the width for three columns */
             padding: 5px; /* Optional padding for better spacing */
+            color: white;
+            background: rgba(0, 0, 0, 0);
         }
 
         /* Clear floats after the columns */
@@ -63,6 +129,7 @@
             content: "";
             display: table;
             clear: both;
+            color: white;
         }
                 /* Style for the publications section */
         .publication {
@@ -83,17 +150,21 @@
 
         .publication-links {
             margin-bottom: 20px;
+            color:aquamarine;
         }
         .publication-links a {
             margin-right: 10px; /* Space between links */
             text-decoration: none; /* No underline */
+            color: aquamarine;
         }
 
         .publication-links a:hover {
             text-decoration: underline; /* Underline on hover */
+            color: red;
         }
         .publication-links .fa-github {
             margin-right: 5px; /* Space between GitHub icon and text */
+            color: aquamarine;
         }
         .publication, .publication-details {
             font-size: 14px; /* This will affect all text within the publication container */
@@ -101,6 +172,7 @@
         table {
             border-collapse: separate;
             border-spacing: 0 5px;
+            color: white;
         }
         table td:nth-child(1) {
             width:120px;
@@ -126,7 +198,7 @@
 
     <header>
         <h1>Jacopo Bonato</h1>
-        <p>Research Scientist in Artificial Intelligence</p>
+        <p1>Research Scientist in Artificial Intelligence</p1>
         <!-- Social icons for LinkedIn and GitHub -->
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/jacopo-bonato92" target="_blank" title="LinkedIn">
@@ -141,10 +213,14 @@
             </a>
             <!-- Google Scholar symbol (using your custom image) -->
             <a href="https://scholar.google.com/citations?user=yourID" target="_blank">
-                <img src="imgs/scholar_1.png" alt="Google Scholar" />
+                <img src="imgs/google-scholar.png" alt="Google Scholar" />
             </a>
         </div>
     </header>
+
+    <div class="profile-circle">
+        <img src="imgs/prof.jpeg" alt="Profile photo">
+      </div>
 
     <section>
         <h2>About Me</h2>
@@ -302,7 +378,7 @@
         <h3>MIND: Multi-Task Incremental Network Distillation</h3>
         <p class="publication-details">
             Authors: J. Bonato, F. Pelosin, L. Sabetta, A. Nicolosi<br>
-            Conference: AAAI-24, the 38th Annual AAAI Conference on Artificial Intelligence | Year: 2023 <span style="background-color: yellow;">Selected for Oral Presentation</span> 
+            Conference: AAAI-24, the 38th Annual AAAI Conference on Artificial Intelligence | Year: 2023 <span style="background-color: green;">Selected for Oral Presentation</span> 
         </p>
         <div class="publication-links">
             <a href="https://github.com/Lsabetta/MIND" target="_blank" title="Code">
@@ -409,7 +485,7 @@
         <h3>Complementary encoding of spatial information in hippocampal astrocytes</h3>
         <p class="publication-details">
             Authors: S. Curreli, J. Bonato, S. Romanzi, S. Panzeri, T. Fellin<br>
-            Journal: PLoS Biology | Year: 2022 - <span style="background-color: yellow;">Best paper of the year in PLoS Bio.</span>
+            Journal: PLoS Biology | Year: 2022 - <span style="background-color: green;">Best paper of the year in PLoS Bio.</span>
         </p>
         <div class="publication-links">
             <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001530" target="_blank">PDF</a>
@@ -480,13 +556,14 @@
 
         <h2>Talks</h2>
         <ul>
+        <li><b>AAAI</b>, [ Vancouver, 23/02/2024] MIND: Multi-Task Incremental Network Distillation, Oral presentation</li>
         <li><b>CodeMotion, Lventure</b>, [ Rome, 12/10/2023] Object detection in Computer Vision: The most advanced techniques that have revolutionized artificial vision</li>
         
         <li><b>Brain Informatics</b>, [ Padova, 15/07/2022 | 17/07/2022 ] Oral presentation: Optimizing measures of information encoding in astrocytic calcium signals</li>
 
         <li><b>SFN meeting</b> [ 12/11/2021 | 16/11/2021 ] Rapid spatiotemporal analysis of astrocytic calcium dynamics using deep learning</li>
 
-        <li><b>Neuromatch meeting</b> <span style="background-color: yellow;">Selected for Oral Presentation</span> [ 30/03/2020 | 31/03/2020 ] Astro3S: a novel deep learning method for Astrocyte Spatiotemporal Semantic Segmentation</li>
+        <li><b>Neuromatch meeting</b> <span style="background-color: green;">Selected for Oral Presentation</span> [ 30/03/2020 | 31/03/2020 ] Astro3S: a novel deep learning method for Astrocyte Spatiotemporal Semantic Segmentation</li>
 
         <li><b>SIF meeting</b> [ Trento, 11/09/2017 | 15/09/2017 ] Oral presentation: Using high speed smartphone cameras and video analysis techniques to teach mechanical wave physics</li>
         </ul>
